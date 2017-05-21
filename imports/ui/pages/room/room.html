@@ -1,6 +1,6 @@
 <template name="App_room">
-  <h1>{{ room.name }}</h1>
-  <div class="back"><a href="{{pathFor '/'}}">powrót</a></div>
+  <h2>{{room.title}}</h2>
+  <div class="back"><a href="{{pathFor 'App.home'}}">powrót</a></div>
   <div class="selectors">
     <div class="color-selector">
       <p>Kolor:</p>
@@ -19,5 +19,5 @@
     <button>Wyczyść</button>
     </div>
   </div>
-  <canvas id="canvas"  width="1000" height="500"></canvas>
+  <canvas id="canvas"  width="1000" height="400"></canvas>
 </template>

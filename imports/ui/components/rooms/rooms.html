@@ -1,0 +1,12 @@
+<template name="rooms">
+<h1>Canvas</h1>
+<form class="info-room-add">
+  <input type="text" name="title" placeholder="Title" required>
+  <input type="submit" name="submit" value="Add">
+</form>
+  <ul>
+    {{#each rooms}}
+      <li><a href="{{pathFor 'App.room' id=_id}}" >{{title}}</a> | <a href="#" class="info-room-remove">remove</a></li>
+    {{/each}}
+  </ul>
+</template>

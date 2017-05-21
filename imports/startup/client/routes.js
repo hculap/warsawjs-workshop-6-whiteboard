@@ -17,9 +17,9 @@ FlowRouter.route('/', {
 
 FlowRouter.route('/rooms/:id', {
   name: 'App.room',
-  action() {
+  action(){
     BlazeLayout.render('App_body', { main: 'App_room' });
-  },
+  }
 });
 
 FlowRouter.notFound = {

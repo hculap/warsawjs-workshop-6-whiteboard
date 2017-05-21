@@ -18,7 +18,7 @@ export class CanvasManager{
   }
 
   static get TOUCH_EVENT_TYPES(){
-     return ['touchmove', 'touchstart', 'touchend', ];
+     return ['touchmove', 'touchstart', 'touchend'];
   }
 
   static get DEFAULT_OPTIONS(){
@@ -53,7 +53,6 @@ export class CanvasManager{
     return privateVars.get(this).canvas;
   }
 
-
   get context(){
     return canvas.getContext('2d');
   }
@@ -68,10 +67,10 @@ export class CanvasManager{
 
   // Instance Methods
   clear() {
-    if (confirm("Czy na pewno chcesz wszystko usunąć?")) {
+      // this.context.fillStyle = 'white';
+      // this.context.fillRect(0, 0, this.width, this.height);
       this.context.clearRect(0, 0, this.width, this.height);
-      this.callback && this.callback();
-    }
+
   }
 
   load(dataUrl){
@@ -156,6 +155,7 @@ function findTouchxy(event){
 }
 
 function draw(){
+    this.context.lineCap = 'round';
     this.context.beginPath();
     this.context.moveTo(privateVars.get(this).prevX, privateVars.get(this).prevY);
     this.context.lineTo(privateVars.get(this).currX, privateVars.get(this).currY);
@@ -171,8 +171,4 @@ function calculatePath(event){
   privateVars.get(this).currX = event.clientX - this.canvas.offsetLeft;
   privateVars.get(this).currY = event.clientY - this.canvas.offsetTop;
 }
-
-
-
-
 
